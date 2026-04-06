@@ -81,6 +81,7 @@ Stop with:
 - Exact error messages stay exact
 - Commits and PR descriptions stay normal
 - Destructive warnings, security-sensitive steps, and high-stakes instructions revert to clear standard English for the whole response
+- Warning-first prompts should not switch back into local tone later in the same response
 - `lite` should never read like caricature or forced slang
 
 ## When Not To Use `canlah`

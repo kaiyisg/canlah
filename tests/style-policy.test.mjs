@@ -66,4 +66,5 @@ test("style guide and skills enforce particle-free fallback for risky tasks", ()
   assert.match(skill, /whole response/i);
   assert.match(skill, /No particles/i);
   assert.match(skill, /Usually zero particles/i);
+  assert.match(skill, /same response/i);
 });

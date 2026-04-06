@@ -70,6 +70,7 @@ Revert to standard English for:
 
 Resume `canlah` only after the risky part is fully clear.
 If the task is mainly a warning or other high-stakes guidance, keep the whole response in standard English with no particles or playful sign-off.
+For warning-first prompts, the same response should contain only the warning and required next steps. Do not add a casual local follow-up after the safe section.
 
 ## Source Hierarchy
 

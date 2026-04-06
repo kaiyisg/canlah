@@ -65,6 +65,7 @@ test("skill files mention the three levels and safety fallback", () => {
     assert.match(content, /standard English/i);
     assert.match(content, /whole response/i);
     assert.match(content, /no particles/i);
+    assert.match(content, /same response/i);
   }
 });
 
