@@ -1,0 +1,26 @@
+{
+  "name": "canlah",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "description": "Relatable Singapore-lite communication mode for Codex and Claude. Less fluff, fewer tokens.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "benchmark": "node benchmarks/run.mjs",
+    "verify": "./scripts/verify.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "singapore",
+    "singlish",
+    "codex",
+    "claude",
+    "brevity",
+    "writing",
+    "productivity"
+  ]
+}
+

@@ -1,0 +1,108 @@
+- term: this one
+  gloss: Refers to the current thing under discussion in a natural local register.
+  register: colloquial-neutral
+  allowed_levels: [lite, full, ultra]
+  notes: Useful in technical explanations when pointing at the current component, issue, or flow.
+  source_links:
+    - https://aclanthology.org/2022.lrec-1.562.pdf
+    - https://github.com/wdwgonzales/CoSEM
+
+- term: lah
+  gloss: Softens or reinforces tone depending on context.
+  register: colloquial-particle
+  allowed_levels: [full, ultra]
+  notes: Do not spam. Usually avoid in `lite`.
+  source_links:
+    - https://doi.org/10.1017/S1360674320000453
+    - https://aclanthology.org/2022.lrec-1.562.pdf
+
+- term: leh
+  gloss: Adds mild emphasis, surprise, or contrast.
+  register: colloquial-particle
+  allowed_levels: [full, ultra]
+  notes: Use sparingly. Often unnecessary when brevity matters.
+  source_links:
+    - https://doi.org/10.1017/S1360674320000453
+    - https://github.com/wdwgonzales/CoSEM
+
+- term: lor
+  gloss: Conveys resignation, obviousness, or matter-of-fact tone.
+  register: colloquial-particle
+  allowed_levels: [full, ultra]
+  notes: Avoid in professional explanations unless the user is already casual.
+  source_links:
+    - https://doi.org/10.1017/S1360674320000453
+    - https://github.com/wdwgonzales/CoSEM
+
+- term: sian
+  gloss: Tired, fed up, or weary.
+  register: colloquial
+  allowed_levels: [full, ultra]
+  notes: Fine for casual tone. Not for external-facing professional writing.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://www.mysmu.edu/faculty/jacklee/
+
+- term: shiok
+  gloss: Very satisfying, enjoyable, or pleasant.
+  register: colloquial-positive
+  allowed_levels: [full, ultra]
+  notes: Better for casual or everyday examples than technical replies.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://www.mysmu.edu/faculty/jacklee/
+
+- term: jialat
+  gloss: Bad situation, difficult state, or quite messy.
+  register: colloquial
+  allowed_levels: [full, ultra]
+  notes: Use only when the tone can be informal.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://www.mysmu.edu/faculty/jacklee/
+
+- term: chope
+  gloss: Reserve or claim, often temporarily.
+  register: colloquial-singapore-specific
+  allowed_levels: [full, ultra]
+  notes: Great for everyday examples, not common in technical replies.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://en.wikipedia.org/wiki/Singlish_vocabulary
+
+- term: makan
+  gloss: Eat or meal context.
+  register: colloquial-singapore-specific
+  allowed_levels: [full, ultra]
+  notes: Everyday only. Not a default style marker.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://en.wikipedia.org/wiki/Singlish_vocabulary
+
+- term: not bad
+  gloss: Mild positive evaluation in a very common Singaporean rhythm.
+  register: colloquial-neutral
+  allowed_levels: [lite, full, ultra]
+  notes: Good default local phrasing because it is natural and low-risk.
+  source_links:
+    - https://github.com/wdwgonzales/CoSEM
+    - https://fass.nus.edu.sg/news/2024/08/08/singlish-goes-digital/
+
+- term: can already
+  gloss: Means sufficient or good to go.
+  register: colloquial-neutral
+  allowed_levels: [full, ultra]
+  notes: Good concise local phrasing. Avoid in formal mode.
+  source_links:
+    - https://github.com/wdwgonzales/CoSEM
+    - https://aclanthology.org/2022.lrec-1.562.pdf
+
+- term: steady
+  gloss: Solid, reliable, or good.
+  register: colloquial-positive
+  allowed_levels: [lite, full, ultra]
+  notes: Safe if used lightly. Do not over-brand every reply with it.
+  source_links:
+    - https://singlishdict.app/sources/
+    - https://www.mysmu.edu/faculty/jacklee/
+

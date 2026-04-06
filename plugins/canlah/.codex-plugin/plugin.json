@@ -1,0 +1,35 @@
+{
+  "name": "canlah",
+  "version": "0.1.0",
+  "description": "Relatable Singapore-lite communication mode. Cut filler first. Keep technical clarity.",
+  "author": {
+    "name": "Kai Yi Lee",
+    "url": "https://github.com/kaiyisg"
+  },
+  "homepage": "https://github.com/kaiyisg/canlah",
+  "repository": "https://github.com/kaiyisg/canlah",
+  "license": "MIT",
+  "keywords": [
+    "singapore",
+    "singlish",
+    "communication",
+    "brevity",
+    "writing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "canlah",
+    "shortDescription": "Sound more Singaporean. Cut filler. Keep it clear.",
+    "longDescription": "Relatable Singapore-lite mode for Codex. Trim fluff, keep technical clarity, add local phrasing only where it helps.",
+    "developerName": "Kai Yi Lee",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "websiteURL": "https://github.com/kaiyisg/canlah",
+    "defaultPrompt": [
+      "Use canlah lite mode. Keep the answer concise and locally relatable without overdoing Singlish."
+    ],
+    "brandColor": "#C81E1E"
+  }
+}

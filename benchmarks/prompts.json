@@ -1,0 +1,43 @@
+[
+  {
+    "id": "technical-explanation",
+    "prompt": "Explain why this React component keeps re-rendering.",
+    "baseline": "Your component is re-rendering because you create a new object every time the render function runs. React sees a fresh reference on every pass, so the shallow comparison fails and the child updates again. Move that object into useMemo so the reference stays stable between renders.",
+    "lite": "This one re-renders because you create a fresh object every render. React sees a new reference each pass, so the shallow comparison fails. Move it into useMemo so the reference stays stable.",
+    "full": "This one keeps re-rendering because the object is new every time. React sees fresh ref each pass, so comparison fails. Put it in useMemo can already.",
+    "ultra": "Fresh object each render -> new ref -> re-render. useMemo can already."
+  },
+  {
+    "id": "bug-diagnosis",
+    "prompt": "Diagnose the auth middleware bug.",
+    "baseline": "The authentication middleware is likely failing because the expiry check only rejects tokens after the deadline instead of at the deadline. That means boundary values slip through. Tighten the comparison and add a regression test that covers the exact expiry timestamp.",
+    "lite": "This auth bug is from the expiry check. It only rejects tokens after the deadline, so boundary values slip through. Tighten the comparison and add one regression test for the exact timestamp.",
+    "full": "Auth bug is the expiry check lah. It rejects too late, so boundary values still pass. Tighten the comparison and add one regression test.",
+    "ultra": "Expiry check rejects too late. Boundary token still passes. Tighten compare + add regression test."
+  },
+  {
+    "id": "code-review-feedback",
+    "prompt": "Give code review feedback for a risky SQL change.",
+    "baseline": "This SQL change is risky because it concatenates user-controlled input directly into the query string. That opens the door to injection and also makes the query harder to reason about. Use a parameterized query instead and add a test for malicious input.",
+    "lite": "This SQL change is risky because user input goes straight into the query string. That opens an injection path and makes the query harder to reason about. Use parameters instead and add one malicious-input test.",
+    "full": "This SQL change quite risky. User input goes straight into the query string, so injection is on the table. Parameterise it and add one nasty-input test.",
+    "ultra": "User input in raw SQL string. Injection risk. Parameterise + add malicious-input test."
+  },
+  {
+    "id": "rewrite-for-clarity",
+    "prompt": "Rewrite a long status update so it is clearer.",
+    "baseline": "The rollout is mostly complete, but we still need to verify the background jobs and the retry path before we call it done. The API responses look healthy, and the dashboard is stable, but I do not want to mark this as finished until the final smoke checks are complete.",
+    "lite": "Rollout is mostly done, but we still need to verify the background jobs and retry path before calling it finished. API responses look healthy and the dashboard is stable. I would wait for the final smoke checks before marking done.",
+    "full": "Rollout mostly done already, but still need to verify the background jobs and retry path before calling it finished. API looks healthy, dashboard stable. Wait for the last smoke checks first.",
+    "ultra": "Rollout mostly done. Still need background-job + retry-path checks. API healthy, dashboard stable. Finish after final smoke."
+  },
+  {
+    "id": "casual-everyday",
+    "prompt": "Reply about whether a long hawker queue is worth it.",
+    "baseline": "The queue is definitely long, but if the food is genuinely good and you are not in a rush, it is probably worth waiting a little while. I would only skip it if you are short on time or the line is barely moving.",
+    "lite": "Queue quite long, but if the food is really good and you're not rushing, worth waiting a bit. I would only skip if time is tight or the line is barely moving.",
+    "full": "Queue long lah, but if the food really good and you're not rushing, wait a bit also worth it. If the line not moving then skip lor.",
+    "ultra": "Queue long, but if not rushing and food solid, worth it. If line not moving, skip."
+  }
+]
+
