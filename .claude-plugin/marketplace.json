@@ -1,7 +1,5 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "canlah",
-  "description": "Relatable Singapore-lite communication mode for Claude Code. Less fluff, fewer tokens.",
   "owner": {
     "name": "Kai Yi Lee",
     "url": "https://github.com/kaiyisg"

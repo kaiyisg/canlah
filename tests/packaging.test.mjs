@@ -49,6 +49,7 @@ test("claude marketplace and plugin metadata are aligned", () => {
   assert.equal(marketplace.name, "canlah");
   assert.equal(plugin.name, "canlah");
   assert.equal(marketplace.plugins[0].name, "canlah");
+  assert.deepEqual(Object.keys(marketplace).sort(), ["name", "owner", "plugins"]);
 });
 
 test("skill files mention the three levels and safety fallback", () => {
@@ -62,6 +63,8 @@ test("skill files mention the three levels and safety fallback", () => {
     assert.match(content, /full/i);
     assert.match(content, /ultra/i);
     assert.match(content, /standard English/i);
+    assert.match(content, /whole response/i);
+    assert.match(content, /no particles/i);
   }
 });
 
@@ -72,4 +75,3 @@ test("readme leads with relatable singaporean value prop", () => {
   assert.match(content, /When Not To Use/i);
   assert.match(content, /Grounding Policy/i);
 });
-

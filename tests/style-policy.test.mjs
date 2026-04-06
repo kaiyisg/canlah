@@ -57,3 +57,13 @@ test("guardrail examples avoid colloquial particles in risky contexts", () => {
     assert.equal(countParticles(example), 0);
   }
 });
+
+test("style guide and skills enforce particle-free fallback for risky tasks", () => {
+  assert.match(styleGuide, /standard English/i);
+  assert.match(styleGuide, /no parody/i);
+
+  const skill = fs.readFileSync(path.join(repoRoot, "skills", "canlah", "SKILL.md"), "utf8");
+  assert.match(skill, /whole response/i);
+  assert.match(skill, /No particles/i);
+  assert.match(skill, /Usually zero particles/i);
+});

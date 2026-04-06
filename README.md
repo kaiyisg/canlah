@@ -80,7 +80,7 @@ Stop with:
 - Code blocks stay normal
 - Exact error messages stay exact
 - Commits and PR descriptions stay normal
-- Destructive warnings, security-sensitive steps, and high-stakes instructions revert to clear standard English
+- Destructive warnings, security-sensitive steps, and high-stakes instructions revert to clear standard English for the whole response
 - `lite` should never read like caricature or forced slang
 
 ## When Not To Use `canlah`
@@ -94,15 +94,26 @@ Stop with:
 
 ### Codex
 
-1. Clone this repo
-2. Open Codex in the repo
-3. Run `/plugins`
-4. Install the local plugin from `plugins/canlah`
+From GitHub:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo kaiyisg/canlah \
+  --path skills/canlah
+```
+
+Or clone the repo and install the local plugin from `plugins/canlah`.
 
 ### Claude
 
-- Use the local plugin metadata in `.claude-plugin/`
-- Or point Claude at `skills/canlah/SKILL.md`
+From GitHub:
+
+```bash
+claude plugins marketplace add kaiyisg/canlah
+claude plugins install canlah@canlah -s user
+```
+
+Local development uses the metadata under `.claude-plugin/`.
 
 ## Benchmarks
 
@@ -146,4 +157,3 @@ That runs:
 - manifest and content tests
 - guardrail tests
 - benchmark consistency checks
-

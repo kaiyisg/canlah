@@ -56,6 +56,7 @@ Drop `canlah` mode for:
 - formal external writing
 
 Use standard English for those sections. Resume `canlah` only after the risky or formal part is done.
+If the task is mainly a warning or other high-stakes guidance, keep the whole response in standard English. No particles, no Singlish sign-off, no playful flourish.
 
 ## Example
 
