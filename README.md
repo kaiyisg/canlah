@@ -181,6 +181,7 @@ See:
 ## Verify
 
 ```bash
+npm install
 npm run verify
 ```
 
