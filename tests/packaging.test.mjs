@@ -26,7 +26,9 @@ test("required packaging files exist", () => {
     "grounding/lexicon.yml",
     "README.md",
     "package.json",
-    "scripts/verify.sh"
+    "scripts/verify.sh",
+    "scripts/install-codex-global.sh",
+    "scripts/uninstall-codex-global.sh"
   ];
 
   for (const file of required) {
@@ -75,4 +77,8 @@ test("readme leads with relatable singaporean value prop", () => {
   assert.match(content, /Less fluff, fewer tokens/i);
   assert.match(content, /When Not To Use/i);
   assert.match(content, /Grounding Policy/i);
+  assert.match(content, /npx -y skills add kaiyisg\/canlah/i);
+  assert.match(content, /install-codex-global\.sh/i);
+  assert.match(content, /~\/\.codex\/AGENTS\.md/i);
+  assert.match(content, /will not automatically switch styles/i);
 });

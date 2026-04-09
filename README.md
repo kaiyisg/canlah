@@ -95,7 +95,34 @@ Stop with:
 
 ### Codex
 
-From GitHub:
+One-line global skill install, Caveman-style:
+
+```bash
+npx -y skills add kaiyisg/canlah -g -a codex -s canlah -y --copy
+```
+
+That makes the `canlah` skill available to Codex globally. If you also want `canlah lite`
+to be the default voice in every new Codex session, clone the repo once and run:
+
+```bash
+git clone https://github.com/kaiyisg/canlah.git
+cd canlah
+./scripts/install-codex-global.sh
+```
+
+That installer:
+
+- installs the skill globally for Codex
+- inserts a managed `canlah lite` default-voice block into `~/.codex/AGENTS.md`
+- creates a timestamped backup of `~/.codex/AGENTS.md` first
+
+Why this extra step exists: Codex will not automatically switch styles just because a skill is
+installed. The skill makes `canlah` available, while the managed `~/.codex/AGENTS.md` block makes
+it the default voice for new sessions.
+
+Restart Codex or open a new session after running it.
+
+Manual / alternate path:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -158,3 +185,11 @@ That runs:
 - manifest and content tests
 - guardrail tests
 - benchmark consistency checks
+
+## Uninstall
+
+If you used the global Codex installer:
+
+```bash
+./scripts/uninstall-codex-global.sh
+```
