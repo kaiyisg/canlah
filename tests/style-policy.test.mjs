@@ -13,17 +13,16 @@ function countParticles(text) {
   return matches ? matches.length : 0;
 }
 
-test("lite examples stay restrained", () => {
+test("canlah benchmark examples stay compressed without particle spam", () => {
   for (const prompt of prompts) {
-    assert.ok(countParticles(prompt.lite) <= 1, `${prompt.id}: lite is too particle-heavy`);
+    assert.ok(countParticles(prompt.canlah) <= 2, `${prompt.id}: canlah is too particle-heavy`);
   }
 });
 
-test("full and ultra examples stay understandable", () => {
+test("canlah examples stay present and shorter than baseline", () => {
   for (const prompt of prompts) {
-    assert.ok(prompt.full.length > 0, `${prompt.id}: missing full example`);
-    assert.ok(prompt.ultra.length > 0, `${prompt.id}: missing ultra example`);
-    assert.ok(prompt.ultra.length <= prompt.full.length, `${prompt.id}: ultra should be shortest`);
+    assert.ok(prompt.canlah.length > 0, `${prompt.id}: missing canlah example`);
+    assert.ok(prompt.canlah.length < prompt.baseline.length, `${prompt.id}: canlah should be shorter than baseline`);
   }
 });
 
@@ -40,7 +39,7 @@ test("lexicon entries carry notes and source links", () => {
   for (const entry of entries) {
     assert.match(entry, /gloss:/);
     assert.match(entry, /register:/);
-    assert.match(entry, /allowed_levels:/);
+    assert.match(entry, /allowed_modes:/);
     assert.match(entry, /notes:/);
     assert.match(entry, /source_links:/);
   }
@@ -61,10 +60,11 @@ test("guardrail examples avoid colloquial particles in risky contexts", () => {
 test("style guide and skills enforce particle-free fallback for risky tasks", () => {
   assert.match(styleGuide, /standard English/i);
   assert.match(styleGuide, /no parody/i);
+  assert.match(styleGuide, /one mode only/i);
 
   const skill = fs.readFileSync(path.join(repoRoot, "skills", "canlah", "SKILL.md"), "utf8");
   assert.match(skill, /whole response/i);
   assert.match(skill, /No particles/i);
-  assert.match(skill, /Usually zero particles/i);
+  assert.match(skill, /One mode only/i);
   assert.match(skill, /same response/i);
 });

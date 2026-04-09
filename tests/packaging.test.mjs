@@ -41,7 +41,7 @@ test("codex plugin manifest exposes local skills", () => {
   assert.equal(manifest.name, "canlah");
   assert.equal(manifest.skills, "./skills/");
   assert.equal(manifest.license, "MIT");
-  assert.match(manifest.interface.defaultPrompt[0], /canlah lite/i);
+  assert.match(manifest.interface.defaultPrompt[0], /Use canlah mode/i);
 });
 
 test("claude marketplace and plugin metadata are aligned", () => {
@@ -54,16 +54,15 @@ test("claude marketplace and plugin metadata are aligned", () => {
   assert.deepEqual(Object.keys(marketplace).sort(), ["name", "owner", "plugins"]);
 });
 
-test("skill files mention the three levels and safety fallback", () => {
+test("skill files describe one mode and safety fallback", () => {
   for (const file of [
     "canlah/SKILL.md",
     "skills/canlah/SKILL.md",
     "plugins/canlah/skills/canlah/SKILL.md"
   ]) {
     const content = read(file);
-    assert.match(content, /lite/i);
-    assert.match(content, /full/i);
-    assert.match(content, /ultra/i);
+    assert.match(content, /One mode only/i);
+    assert.match(content, /Compress first/i);
     assert.match(content, /standard English/i);
     assert.match(content, /whole response/i);
     assert.match(content, /no particles/i);
@@ -81,4 +80,6 @@ test("readme leads with relatable singaporean value prop", () => {
   assert.match(content, /install-codex-global\.sh/i);
   assert.match(content, /~\/\.codex\/AGENTS\.md/i);
   assert.match(content, /will not automatically switch styles/i);
+  assert.match(content, /one mode/i);
+  assert.match(content, /gpt-tokenizer/i);
 });

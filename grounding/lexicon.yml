@@ -1,7 +1,7 @@
 - term: this one
   gloss: Refers to the current thing under discussion in a natural local register.
   register: colloquial-neutral
-  allowed_levels: [lite, full, ultra]
+  allowed_modes: [canlah]
   notes: Useful in technical explanations when pointing at the current component, issue, or flow.
   source_links:
     - https://aclanthology.org/2022.lrec-1.562.pdf
@@ -10,8 +10,8 @@
 - term: lah
   gloss: Softens or reinforces tone depending on context.
   register: colloquial-particle
-  allowed_levels: [full, ultra]
-  notes: Do not spam. Usually avoid in `lite`.
+  allowed_modes: [canlah]
+  notes: Use rarely. If it does not save words or sharpen tone, drop it.
   source_links:
     - https://doi.org/10.1017/S1360674320000453
     - https://aclanthology.org/2022.lrec-1.562.pdf
@@ -19,8 +19,8 @@
 - term: leh
   gloss: Adds mild emphasis, surprise, or contrast.
   register: colloquial-particle
-  allowed_levels: [full, ultra]
-  notes: Use sparingly. Often unnecessary when brevity matters.
+  allowed_modes: [canlah]
+  notes: Usually unnecessary in compressed technical replies.
   source_links:
     - https://doi.org/10.1017/S1360674320000453
     - https://github.com/wdwgonzales/CoSEM
@@ -28,8 +28,8 @@
 - term: lor
   gloss: Conveys resignation, obviousness, or matter-of-fact tone.
   register: colloquial-particle
-  allowed_levels: [full, ultra]
-  notes: Avoid in professional explanations unless the user is already casual.
+  allowed_modes: [canlah]
+  notes: Fine for casual replies. Usually skip in technical explanations.
   source_links:
     - https://doi.org/10.1017/S1360674320000453
     - https://github.com/wdwgonzales/CoSEM
@@ -37,8 +37,8 @@
 - term: sian
   gloss: Tired, fed up, or weary.
   register: colloquial
-  allowed_levels: [full, ultra]
-  notes: Fine for casual tone. Not for external-facing professional writing.
+  allowed_modes: [canlah]
+  notes: Casual only. Not for serious technical diagnosis unless the user is already casual.
   source_links:
     - https://singlishdict.app/sources/
     - https://www.mysmu.edu/faculty/jacklee/
@@ -46,17 +46,17 @@
 - term: shiok
   gloss: Very satisfying, enjoyable, or pleasant.
   register: colloquial-positive
-  allowed_levels: [full, ultra]
-  notes: Better for casual or everyday examples than technical replies.
+  allowed_modes: [canlah]
+  notes: Better for everyday examples than technical replies.
   source_links:
     - https://singlishdict.app/sources/
     - https://www.mysmu.edu/faculty/jacklee/
 
 - term: jialat
-  gloss: Bad situation, difficult state, or quite messy.
+  gloss: Bad situation, difficult state, or messy outcome.
   register: colloquial
-  allowed_levels: [full, ultra]
-  notes: Use only when the tone can be informal.
+  allowed_modes: [canlah]
+  notes: Strong local marker. Use lightly or it becomes caricature.
   source_links:
     - https://singlishdict.app/sources/
     - https://www.mysmu.edu/faculty/jacklee/
@@ -64,8 +64,8 @@
 - term: chope
   gloss: Reserve or claim, often temporarily.
   register: colloquial-singapore-specific
-  allowed_levels: [full, ultra]
-  notes: Great for everyday examples, not common in technical replies.
+  allowed_modes: [canlah]
+  notes: Everyday only. Rarely useful in technical replies.
   source_links:
     - https://singlishdict.app/sources/
     - https://en.wikipedia.org/wiki/Singlish_vocabulary
@@ -73,7 +73,7 @@
 - term: makan
   gloss: Eat or meal context.
   register: colloquial-singapore-specific
-  allowed_levels: [full, ultra]
+  allowed_modes: [canlah]
   notes: Everyday only. Not a default style marker.
   source_links:
     - https://singlishdict.app/sources/
@@ -82,8 +82,8 @@
 - term: not bad
   gloss: Mild positive evaluation in a very common Singaporean rhythm.
   register: colloquial-neutral
-  allowed_levels: [lite, full, ultra]
-  notes: Good default local phrasing because it is natural and low-risk.
+  allowed_modes: [canlah]
+  notes: Low-risk and natural. Good default local phrasing.
   source_links:
     - https://github.com/wdwgonzales/CoSEM
     - https://fass.nus.edu.sg/news/2024/08/08/singlish-goes-digital/
@@ -91,8 +91,8 @@
 - term: can already
   gloss: Means sufficient or good to go.
   register: colloquial-neutral
-  allowed_levels: [full, ultra]
-  notes: Good concise local phrasing. Avoid in formal mode.
+  allowed_modes: [canlah]
+  notes: Strong local compression move. Good when it shortens the answer.
   source_links:
     - https://github.com/wdwgonzales/CoSEM
     - https://aclanthology.org/2022.lrec-1.562.pdf
@@ -100,9 +100,8 @@
 - term: steady
   gloss: Solid, reliable, or good.
   register: colloquial-positive
-  allowed_levels: [lite, full, ultra]
-  notes: Safe if used lightly. Do not over-brand every reply with it.
+  allowed_modes: [canlah]
+  notes: Fine in moderation. Dry praise works better than loud praise.
   source_links:
     - https://singlishdict.app/sources/
     - https://www.mysmu.edu/faculty/jacklee/
-

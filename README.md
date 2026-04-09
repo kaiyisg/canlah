@@ -1,35 +1,44 @@
 # canlah
 
-**Feels like talking to an AI that actually sounds Singaporean. Less fluff, fewer tokens.**
+**Serious token-saving Singapore mode for coding agents. Less fluff, fewer tokens. Funny only when it lands naturally.**
 
-`canlah` is a Singapore-lite communication mode for AI assistants. It trims filler and hedging first, then adds restrained Singaporean phrasing so replies feel local and relatable without turning into parody.
+`canlah` is a compressed Singaporean communication mode for AI assistants. It cuts filler hard, keeps technical substance exact, and answers in a dry local rhythm that feels familiar to Singaporean devs and still sounds Singaporean.
 
-Day one, it is aimed at **Singaporean devs** using Codex or Claude. The value prop is simple:
+This is no longer a multi-level style pack. `canlah` is **one mode**:
 
-- more relatable than generic assistant English
-- shorter, cleaner answers
-- measurable output savings from saying the same thing with fewer words
+- compressed first
+- Singaporean first
+- serious first
+- occasionally funny, never clowny
 
 ## What It Is
 
 - A **Codex plugin** and **Claude skill/plugin**
-- A **communication mode**, not a translation model
+- A **single compressed Singapore mode**
 - A **grounded style pack**, not a bundled corpus
 
 ## What It Is Not
 
-- not "tourist Singlish"
+- not tourist-board Singlish
 - not a meme generator
-- not a broad Singapore knowledge assistant
-- not a dataset redistribution project
+- not a translation dataset
+- not generic global-English brevity mode
 
-## Modes
+## Voice
 
-| Mode | Default? | Intent |
-|------|----------|--------|
-| `lite` | yes | Singapore-lite. Clear, concise, locally relatable, professional enough for daily use |
-| `full` | no | More colloquial Singlish. Still controlled and readable |
-| `ultra` | no | Maximum compression and more obvious local flavour. Opt-in only |
+`canlah` should sound like:
+
+- a Singaporean engineer talking fast because the point is obvious
+- dry, sharp, and compressed
+- locally natural enough that Singaporeans recognise the rhythm
+- readable enough for technical work
+
+`canlah` should not sound like:
+
+- parody skit dialogue
+- particle spam
+- fake accent spelling
+- clown mode
 
 ## Before / After
 
@@ -39,27 +48,19 @@ Normal:
 
 > Your component is re-rendering because you create a new object on every render. React sees a fresh reference each time, so the prop comparison fails. Move that object into `useMemo`.
 
-`canlah lite`:
+`canlah`:
 
-> This one re-renders because you create a fresh object every render. React sees a new reference each pass. Move it into `useMemo` and it should settle down.
+> Inline object each render = fresh ref. React sees prop changed, so memo break and child re-render. Hoist it or use `useMemo` can already.
 
-`canlah full`:
-
-> This one keeps re-rendering because inline object means new ref every time. Put it in `useMemo` can already.
-
-### Everyday prompt
+### Bug diagnosis
 
 Normal:
 
-> The queue at the hawker centre is very long, but the food is good enough that it is probably worth waiting.
+> The authentication middleware is likely failing because the expiry check only rejects tokens after the deadline instead of at the deadline. That means boundary values slip through. Tighten the comparison and add a regression test.
 
-`canlah lite`:
+`canlah`:
 
-> Queue quite long, but the food is solid. If you're not rushing, worth waiting.
-
-`canlah full`:
-
-> Queue long lah, but the food really not bad. If not rushing, wait a bit also worth it.
+> Expiry check reject too late, so boundary token still pass. Tighten compare and add one regression test. This one classic.
 
 ## Triggers
 
@@ -82,27 +83,28 @@ Stop with:
 - Commits and PR descriptions stay normal
 - Destructive warnings, security-sensitive steps, and high-stakes instructions revert to clear standard English for the whole response
 - Warning-first prompts should not switch back into local tone later in the same response
-- `lite` should never read like caricature or forced slang
+- Humor should be dry and occasional, not constant
 
 ## When Not To Use `canlah`
 
 - formal emails or polished external writing
 - legal, medical, financial, or irreversible instructions
 - situations where the user explicitly wants standard or global English
-- cases where local phrasing would add ambiguity instead of clarity
+- cases where local phrasing adds ambiguity instead of speed
 
 ## Install
 
 ### Codex
 
-One-line global skill install, Caveman-style:
+One-line global skill install:
 
 ```bash
 npx -y skills add kaiyisg/canlah -g -a codex -s canlah -y --copy
 ```
 
-That makes the `canlah` skill available to Codex globally. If you also want `canlah lite`
-to be the default voice in every new Codex session, clone the repo once and run:
+That makes the `canlah` skill available to Codex globally.
+
+If you also want `canlah` to be the default voice in every new Codex session, clone the repo once and run:
 
 ```bash
 git clone https://github.com/kaiyisg/canlah.git
@@ -113,12 +115,10 @@ cd canlah
 That installer:
 
 - installs the skill globally for Codex
-- inserts a managed `canlah lite` default-voice block into `~/.codex/AGENTS.md`
+- inserts a managed `canlah` default-voice block into `~/.codex/AGENTS.md`
 - creates a timestamped backup of `~/.codex/AGENTS.md` first
 
-Why this extra step exists: Codex will not automatically switch styles just because a skill is
-installed. The skill makes `canlah` available, while the managed `~/.codex/AGENTS.md` block makes
-it the default voice for new sessions.
+Why this extra step exists: Codex will not automatically switch styles just because a skill is installed. The skill makes `canlah` available, while the managed `~/.codex/AGENTS.md` block makes it the default voice for new sessions.
 
 Restart Codex or open a new session after running it.
 
@@ -145,19 +145,23 @@ Local development uses the metadata under `.claude-plugin/`.
 
 ## Benchmarks
 
-This repo ships a lightweight benchmark harness in [`benchmarks/prompts.json`](./benchmarks/prompts.json) and [`benchmarks/run.mjs`](./benchmarks/run.mjs).
+This repo ships a benchmark harness in [`benchmarks/prompts.json`](./benchmarks/prompts.json) and [`benchmarks/run.mjs`](./benchmarks/run.mjs).
 
-It does **not** call a model API by default. Instead, it compares paired sample outputs and reports a rough output-token proxy so you can sanity-check the savings trend locally:
-
-- baseline vs `lite`
-- `lite` vs `full`
-- `full` vs `ultra`
+It uses a real tokenizer via `gpt-tokenizer` to count output tokens for the curated sample outputs in the benchmark set.
 
 Run:
 
 ```bash
 npm run benchmark
 ```
+
+The harness compares:
+
+- baseline output tokens
+- `canlah` output tokens
+- percent saved
+
+`npm run verify` also enforces that every shipped `canlah` benchmark output is shorter than baseline and that the fixture set keeps at least 40% average token savings.
 
 ## Grounding Policy
 

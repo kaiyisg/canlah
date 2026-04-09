@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "canlah",
-      "description": "Sound more Singaporean, cut filler first, keep technical clarity.",
+      "description": "Compressed Singaporean mode. Cut filler hard, keep technical clarity, stay dry not clowny.",
       "source": "./",
       "category": "productivity"
     }

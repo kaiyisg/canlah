@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "license": "MIT",
-  "description": "Relatable Singapore-lite communication mode for Codex and Claude. Less fluff, fewer tokens.",
+  "description": "Compressed Singaporean communication mode for Codex and Claude. Less fluff, fewer tokens.",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "benchmark": "node benchmarks/run.mjs",
@@ -18,9 +18,12 @@
     "singlish",
     "codex",
     "claude",
+    "compression",
     "brevity",
     "writing",
     "productivity"
-  ]
+  ],
+  "devDependencies": {
+    "gpt-tokenizer": "^3.4.0"
+  }
 }
-
