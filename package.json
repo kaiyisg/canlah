@@ -24,6 +24,6 @@
     "productivity"
   ],
   "devDependencies": {
-    "gpt-tokenizer": "^3.4.0"
+    "gpt-tokenizer": "3.4.0"
   }
 }
